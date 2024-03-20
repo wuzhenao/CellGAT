@@ -1,0 +1,78 @@
+import warnings
+warnings.filterwarnings('ignore')
+import pandas as pd
+import liana as li
+import anndata
+import scanpy as sc
+import os 
+from utils import *
+from model import *
+import argparse
+import os.path as osp
+
+import torch
+import torch.nn.functional as F
+
+from torch_geometric.datasets import Entities
+from torch_geometric.nn import FastRGCNConv, RGCNConv, GCNConv, GAE, VGAE
+from torch_geometric.utils import k_hop_subgraph
+
+from torch_geometric.datasets import Planetoid
+from torch_geometric.data.data import Data
+from torch_geometric.transforms import NormalizeFeatures
+
+
+from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+
+import pandas as pd
+import numpy as np
+
+from sklearn.metrics.pairwise import cosine_similarity
+from sklearn.cluster import SpectralClustering
+import random
+from sklearn.manifold import TSNE
+import matplotlib.pyplot as plt
+
+from sklearn.metrics.pairwise import cosine_similarity
+
+from scipy.io import mmread
+
+import argparse
+
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+device = "cpu"
+
+parser = argparse.ArgumentParser()
+
+parser.add_argument('--dataset', type=str, default='{Mouse}', help='Dataset to run GraphComm on')
+parser.add_argument('--spatial', type=str, default=None, help="pathway to h5ad containing spatial coordinates")
+parser.add_argument("--reproduce",type=str,default="True",help="reproduce original results of paper")
+parser.add_argument("--Omnipath_lr",type=str,default="0.01",help="reproduce original results of paper")
+parser.add_argument("--cell_groups",type=str,default="0.01",help="whether to write")
+args = parser.parse_args()
+
+nodes = pd.read_csv(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Input/Mouse/nodes.csv",index_col=0)
+interactions = pd.read_csv(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Input/Mouse/interactions.csv",index_col=0)
+matrix = pd.read_csv(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Input/Mouse/matrix.csv",index_col=0)
+meta = pd.read_csv(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Input/Mouse/meta.csv",index_col=0)
+LR_nodes = pd.read_csv(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Input/Mouse/LR_nodes.csv",index_col=0)
+Omnipath_network = pd.read_csv(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Input/Mouse/Omnipath_network.csv",index_col=0)
+
+Omnipath_data,Omnipath_nodes,Omnipath_interactions = make_dataset(LR_nodes,Omnipath_network,first=False,pathway_encode=False)
+print("Getting embeddings from ground truth")
+if args.reproduce == "True":
+    total_embeddings_df = get_Omnipath_embeddings(LR_nodes,Omnipath_network,reproduce=args.dataset,lr=float(args.Omnipath_lr))
+else:
+    total_embeddings_df = get_Omnipath_embeddings(LR_nodes,Omnipath_network,reproduce=None,save=args.dataset,lr=float(args.Omnipath_lr))
+print("getting GATv2Conv cell communication probabilities")
+if args.reproduce == "True":
+    total_link_df = get_cell_LR_embeddings(matrix,meta,nodes,interactions,total_embeddings_df,Omnipath_nodes,Omnipath_interactions,spatial=args.spatial,reproduce=args.dataset)
+
+else:
+    total_link_df = get_cell_LR_embeddings(matrix,meta,nodes,interactions,total_embeddings_df,Omnipath_nodes,Omnipath_interactions,spatial=args.spatial,reproduce=None,save=args.dataset)
+
+total_link_df["Prob"] = (total_link_df["Prob"]-total_link_df["Prob"].min())/(total_link_df["Prob"].max()-total_link_df["Prob"].min())
+os.system("mkdir -p {}".format(f"/home/tjzhang01/wuzhenao/CellGATv2/data/CellGATv2_Output/Mouse/"))
+total_link_df.to_csv(f"../../data/CellGATv2_Output/Mouse/CCI.csv")
+
