@@ -16,9 +16,7 @@ pip install -U\
     torch-cluster==1.6.1
     
 pip install torch-scatter -f https://data.pyg.org/whl/torch-1.13.1.html
-
 pip install torch-sparse -f https://data.pyg.org/whl/torch-1.13.1.html
-
 pip install git+https://github.com/pyg-team/pytorch_geometric.git
 
     
