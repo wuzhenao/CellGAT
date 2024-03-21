@@ -20,4 +20,12 @@ Python packages
     torch-sparse -f https://data.pyg.org/whl/torch-1.13.1.html\
     git+https://github.com/pyg-team/pytorch_geometric.git\
 
+R packages
+install.packages("U")
+    networkD3>=0.4
+    dplyr==1.1.4
+    htmlwidgets==1.6.4
+    webshot==0.5.5
+    circlize==0.4.16
+
     
