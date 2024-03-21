@@ -1,8 +1,7 @@
 # CellGAT: A method to predict inter-cell communication in single-cell sequencing data based on graph attention network.
 
 # Install dependent packages
-Python packages
-(pip install -U)
+Python packages(pip install -U)
     anndata==0.8.0\
     liana==0.1.5\
     matplotlib==3.6.3\ 
@@ -19,8 +18,7 @@ Python packages
     torch-sparse -f https://data.pyg.org/whl/torch-1.13.1.html\
     git+https://github.com/pyg-team/pytorch_geometric.git\
 
-R packages
-install.packages("U")\
+R packages(install.packages("U"))\
     networkD3>=0.4\
     dplyr==1.1.4\
     htmlwidgets==1.6.4\
