@@ -2,7 +2,7 @@
 
 # Install dependent packages
 Python packages
-pip install -U\
+(pip install -U)
     anndata==0.8.0\
     liana==0.1.5\
     matplotlib==3.6.3\ 
