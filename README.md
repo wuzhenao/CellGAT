@@ -1,6 +1,7 @@
 # CellGAT: A method to predict inter-cell communication in single-cell sequencing data based on graph attention network.
 
 # Install dependent packages
+Python packages
 pip install -U\
     anndata==0.8.0\
     liana==0.1.5\
