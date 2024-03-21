@@ -13,12 +13,9 @@ pip install -U\
     scprep==1.2.2 
     torch==1.13.1
     leidenalg==0.9.1 
-    torch-cluster==1.6.1
-    
+    torch-cluster==1.6.1 
     torch-scatter -f https://data.pyg.org/whl/torch-1.13.1.html
-
     torch-sparse -f https://data.pyg.org/whl/torch-1.13.1.html
-
     git+https://github.com/pyg-team/pytorch_geometric.git
 
     
