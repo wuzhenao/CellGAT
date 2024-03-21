@@ -2,8 +2,7 @@
 
 # Install dependent packages
 Python packages(pip install -U)                                
-    anndata==0.8.0\
-    liana==0.1.5\
+    anndata==0.8.0\liana==0.1.5\
     matplotlib==3.6.3\ 
     numpy==1.22.0\ 
     omnipath==1.0.6\ 
