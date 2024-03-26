@@ -1,4 +1,4 @@
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/41b6c20f-da61-4ba4-9564-b5474ef4f085)# CellGAT: A method to predict inter-cell communication in single-cell sequencing data based on graph attention network.
+# CellGAT: A method to predict inter-cell communication in single-cell sequencing data based on graph attention network.
 
 # Install dependent packages
 Python packages(pip install -U)                                
