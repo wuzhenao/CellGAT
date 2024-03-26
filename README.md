@@ -20,8 +20,14 @@ R packages(install.packages("U"))\
 ![image](https://github.com/wuzhenao/CellGAT/assets/114455899/e7dba5bd-cea9-4599-a8f5-1e7c445e0509)      /data/100_times: results from randomization expreiments on each dataset for benchmarking   
 ![image](https://github.com/wuzhenao/CellGAT/assets/114455899/5574639c-b4fa-4fe6-92f6-46441d00ca28)      /data/raw_data: original count matrices from each dataset  
 
-
-
+# code folder
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/benchmarking:notebooks that will allow you to regenerate figures from the original experiments, benchmarking against other methods and randomization interactions  
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/preprocessing:notebook that will lead you through how to create the required input for CellGAT inference   
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/100_times:an example script detailing how to run randomization expriments that were conducted for the manuscript   
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/predictions:all utilies and scripts necessary to conduct  CellGAT training and inference  
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/predictions/utils.py: all functions to conduct training processes for  CellGAT (extracting embeddings from the ground truth, computing probabilites using GATv2   
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/predictions/model.py: architecture for both the ground truth Node2Vec and the GATv2  
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c) /code/predictions/train.py: script that will, with input created from /code/preprocessing will perform the two step training and inference of CCC by  CellGAT  
 
 
 
