@@ -1,4 +1,4 @@
-# CellGAT: A method to predict inter-cell communication in single-cell sequencing data based on graph attention network.
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/41b6c20f-da61-4ba4-9564-b5474ef4f085)# CellGAT: A method to predict inter-cell communication in single-cell sequencing data based on graph attention network.
 
 # Install dependent packages
 Python packages(pip install -U)                                
@@ -13,12 +13,18 @@ R packages(install.packages("U"))\
     networkD3>=0.4\ dplyr==1.1.4\ htmlwidgets==1.6.4\ webshot==0.5.5\ circlize==0.4.16
 
 # data folder
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/5d864bed-3a4d-4ccf-a6e6-755ec5cf449c)  /data/CellGAT_Input: input directed graphs used in the original manuscript to generate CellGAT results
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/e1ae4a00-bed2-41a7-91b4-60cdfda09341)  /data/CellGAT_Output: results from CellGAT inference used in the original publication
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/84c9a1aa-f821-4822-9dda-aa3143d7bada)  /data/models: saved models for each dataset used in the original publication
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/9729c182-e588-4b60-a210-fd5d0a8e9775)  /data/LR_database: all information used from the Omnipath Database used for CCC predictions
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/aa485205-74dc-48ba-b63d-444eb121ef41)  /data/100_times: results from randomization expreiments on each dataset for benchmarking
-![image](https://github.com/wuzhenao/CellGAT/assets/114455899/aa485205-74dc-48ba-b63d-444eb121ef41)  /data/raw_data: original count matrices from each dataset
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/49a2ec9d-8d51-4b1c-afb3-7caacdfa347c)
+ /data/CellGAT_Input: input directed graphs used in the original manuscript to generate CellGAT results
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/50dc8311-09ae-4157-b437-01bac93d2fa8)
+/data/CellGAT_Output: results from CellGAT inference used in the original publication
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/68c9452f-3859-43e3-9300-c00edcae1023)
+/data/models: saved models for each dataset used in the original publication
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/14551e80-5c95-411f-aa9f-164600dfdac6)
+/data/LR_database: all information used from the Omnipath Database used for CCC predictions
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/e7dba5bd-cea9-4599-a8f5-1e7c445e0509)
+/data/100_times: results from randomization expreiments on each dataset for benchmarking
+![image](https://github.com/wuzhenao/CellGAT/assets/114455899/5574639c-b4fa-4fe6-92f6-46441d00ca28)
+/data/raw_data: original count matrices from each dataset
 
 
 
