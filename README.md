@@ -13,11 +13,11 @@ R packages(install.packages("U"))\
     networkD3>=0.4\ dplyr==1.1.4\ htmlwidgets==1.6.4\ webshot==0.5.5\ circlize==0.4.16
 
 # data folder
-/data/CellGAT_Input: input directed graphs used in the original manuscript to generate CellGAT results
-/data/CellGAT_Output: results from CellGAT inference used in the original publication
-/data/models: saved models for each dataset used in the original publication
-/data/LR_database: all information used from the Omnipath Database used for CCC predictions
-/data/100_times: results from randomization expreiments on each dataset for benchmarking
+/data/CellGAT_Input: input directed graphs used in the original manuscript to generate CellGAT results /n
+/data/CellGAT_Output: results from CellGAT inference used in the original publication /n
+/data/models: saved models for each dataset used in the original publication /n
+/data/LR_database: all information used from the Omnipath Database used for CCC predictions /n
+/data/100_times: results from randomization expreiments on each dataset for benchmarking /n
 /data/raw_data: original count matrices from each dataset
 
     
